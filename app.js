@@ -68,6 +68,9 @@ const getWeatherData = (city) => {
 
 function updateWeatherData(weatherData) {
 
+    loading.className = "container-fluid border h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
+
+
     try{
 
         if(weatherData.weather[0].main === "Rain" ){
@@ -110,8 +113,15 @@ function updateWeatherData(weatherData) {
         pressure2.innerHTML = "Pressure  "+weatherData.main.pressure+" hPa";
         visibility2.innerHTML ="Visibility "+ weatherData.visibility+" Km";
 
+        loading.className = "d-none container-fluid border h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
+
+
     }catch(error){
+        
         throw ("error in Updating Data " + error);
+    
+        loading.className = "d-none container-fluid border h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
+
     }
   
 }
