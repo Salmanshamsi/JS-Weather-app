@@ -116,11 +116,8 @@ function updateWeatherData(weatherData) {
 
 
     }catch(error){
-        
-        throw ("error in Updating Data " + error);
-    
         loading.className = "d-none container-fluid border h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
-
+        throw ("error in Updating Data " + error);
     }
   
 }
@@ -188,6 +185,7 @@ function searchCity(event) {
       .catch(error => {
         console.log(error);
         alert("City Not Found");
+        loading.className = "d-none container-fluid border h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
     cityInput.value = "";
     cityInput2.value = "";
       });
