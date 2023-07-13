@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  
+  <div id="bg-img" class="container-fluid" style="
+  height: 100vh;
+  background-image: url('images/sunny.gif');
+  background-size: cover;
+  background-position: center;
+">
+
+
+
+  <header class="d-flex justify-content-end fixed-top h-100 " >
+
+  <div  class="d-md-none container-xxl d-flex  align-items-center justify-content-center p-4  bg-transparent " style="
+    height: 7vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); 
+  ">
+  <form class="form-inline d-flex">
+    <form class="form-inline d-flex w-100 ">
+      <input id="city-input2" class="form-control mr-sm-2 me-2 w-100  " type="search" placeholder="Search for city" aria-label="Search">
+      <button id="search2" name="searchbtn2" class="fa-solid fa-magnifying-glass border-0 bg-transparent text-light  my-2 my-sm-0" type="submit"></button>
+    </form>
+  </form>
+  </div>
+
+
+
+    <div class="d-sm-none d-md-flex flex-column flex-shrink-0 p-3 text-light w-25 h-100 d-none  " style="
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px); 
+    ">
+        <span class="text-light d-flex align-items-center w-100 ">
+          <form class="form-inline d-flex w-100 ">
+            <input id="city-input" class="form-control mr-sm-2 me-2 w-100  " type="search" placeholder="Search for city" aria-label="Search">
+            <button id="search" name="searchbtn" class="fa-solid fa-magnifying-glass border-0 bg-transparent text-light  my-2 my-sm-0" type="submit"></button>
+          </form>
+        </span>
+      <hr class="text-light  border ">
+      <h6>City</h6>
+      <ul class="nav nav-pills flex-column mb-3">
+        <li class="my-2 ms-3 ">
+          <i class="fa-solid fa-location-dot fa-lg me-2 "></i>
+            <button id="tokyo" class="border-0  bg-transparent text-light fs-5" >Tokyo</button>
+        </li>
+        <li class="my-2 ms-3 ">
+          <i class="fa-solid fa-location-dot fa-lg me-2 "></i>
+            <button id="london" class="border-0  bg-transparent text-light fs-5" >London</button>
+        </li>
+        <li class="my-2 ms-3 ">
+          <i class="fa-solid fa-location-dot fa-lg me-2 "></i>
+            <button id="islamabad" class="border-0  bg-transparent text-light fs-5" >Islamabad</button>
+        </li>
+      </ul>
+      <hr class="text-light  border ">
+      <h6>Weather Details</h6>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="my-2 ms-3 d-flex  gx-3">
+       <p>   <i class="fa-solid fa-wind fa-lg me-2 "></i></p>
+      <p id="Wind" >Wind</p>
+        </li>
+        <li class="my-2 ms-3  d-flex gx-3">
+          <p><i class="fa-solid fa-droplet fa-lg me-2 "></i></p>
+          <p id="Humadity" > Humadity</p>
+        </li>
+        <li class="my-2 ms-3  d-flex gx-3">
+      <p>    <i class="fa-solid fa-eye fa-lg me-2 "></i></p>
+            <p id="Visibility" >Visibility</p>
+        </li>
+        <li class="my-2 ms-3 d-flex gx-3 ">
+        <p>  <i class="fa-solid fa-water fa-lg me-2 "></i></p>
+          <p id="pressure" >pressure</p>
+        </li>
+        <li class="my-2 ms-3 d-flex gx-3 ">
+        <p>  <i id="bar-icon" class="fa-solid fa-cloud fa-lg me-2 "></i></p>
+      <p id="weather-disc" ></p>
+        </li>
+      </ul>
+    </div>
+      </header>
+      
+      <section class="row p-4 p-md-0  h-100 d-flex flex-column align-items-center justify-content-center justify-content-md-end  w-100 align-items-md-start m-0   ">
+
+        <div id="loading" class="d-none container-fluid h-100 w-100 bg-transparent fixed-top d-flex align-items-center justify-content-center  "
+        style="
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px); 
+      "
+        >
+            <h1 class="text-success "><i class="fa-solid fa-spinner fa-spin fa-2xl"></i></h1>
+        </div>
+
+        <div class="col-md-4 row  mb-4 rounded py-2  shadow ms-md-5 mb-md-5 d-flex"
+        style="
+          background-color: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(10px); 
+        "
+        >
+            <div class="col ">
+                <h1 id="c-temprature" class="col display-1 fw-medium me-2 text-light  "></h1>
+                <span class="d-block text-light">
+                    <h2 id="location" class="fw-bold display-6  p-0 mb-0 me-2 ">London</h2>
+                    <p id="date" class="col fs-5 fw-normal" >Lorem ipsum dolor sit.</p>
+                </span>
+            </div>
+            <div class="col  d-flex flex-column  align-items-center justify-content-center  ">
+                <h1><i id="Main-icon" class="fa-solid fa-cloud fa-2xl text-light "></i></h1>
+                <p id="weather-disc2" class="d-md-none text-light mt-3" >smoke</p>
+            </div>
+        </div>
+
+        <div class="col-md-4  px-2 py-1  rounded shadow  d-md-none  " 
+        style="
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); 
+  "
+        >
+          <ul class=" row mt-4 list-unstyled d-flex  justify-content-between align-items-center   ">
+            <li class="col-12  d-flex flex-column align-items-center justify-content-center  text-light"><p><i class="fa-solid fa-droplet fa-lg mb-3 "></i></p>
+              <p id="Humadity2"></p>
+            </li>
+            <li class="col d-flex flex-column align-items-center text-light" ><p><i class="fa-solid fa-water fa-lg mb-3  "></i></p>
+              <p id="Wind2" ></p>
+            </li>
+            <li class="col d-flex flex-column align-items-center text-light" ><p><i class="fa-solid fa-wind fa-lg mb-3 "></i></p>
+              <p id="pressure2" ></p>
+            </li>
+            <li class="col-12  d-flex flex-column align-items-center text-light" ><p><i class="fa-solid fa-eye fa-lg mb-3 "></i></p>
+              <p id="Visibility2" ></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+ </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
