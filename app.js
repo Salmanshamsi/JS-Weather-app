@@ -1,7 +1,5 @@
 console.log("Hello, world!");
 
-document.title = "Weather App"
-
 // const deg_ = document.getElementById('deg');
 // const sunrise = document.getElementById('sunrise');
 // const sunset = document.getElementById('sunset');
